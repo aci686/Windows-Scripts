@@ -1,3 +1,12 @@
 # List all users in AD Group
 
-Get-ADGroupMember -Identity "<AD Group Name>" | Get-ADUser -Property DisplayName | select name,samaccountname
+  Get-ADGroupMember -Identity "<AD Group Name>" | Get-ADUser -Property DisplayName | select name,samaccountname
+
+# Elevate before run
+  # Run MyScript.ps1 with elevated privilege
+
+    Start-Process powershell -ArgumentList '-noprofile -file MyScript.ps1' -verb RunAs
+
+  # Run command with elevated privilege
+
+    Start-Process powershell -ArgumentList '<Command>' -verb RunAs
