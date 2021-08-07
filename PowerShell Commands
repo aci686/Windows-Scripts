@@ -10,3 +10,6 @@
   # Run command with elevated privilege
 
     Start-Process powershell -ArgumentList '<Command>' -verb RunAs
+
+# Port forward Windows host to WSL2 guest
+  netsh interface portproxy add v4tov4 listenport=<port#> listenaddress=0.0.0.0 connectport=<port#> connectaddress=<wsl2 guest ip address>
