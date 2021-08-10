@@ -1,6 +1,10 @@
 # List all users in AD Group
 
   Get-ADGroupMember -Identity "<AD Group Name>" | Get-ADUser -Property DisplayName | select name,samaccountname
+  
+# List all group an user belongs to
+
+  Get-ADUser -Identity <samaccountname> -Properties * | Select-Object -ExpandProperty MemberOf
 
 # Elevate before run
   # Run MyScript.ps1 with elevated privilege
