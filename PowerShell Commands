@@ -1,3 +1,7 @@
+# Prompt change
+
+  function prompt {"PS: $(get-date)>"}
+
 # AD listing requires first
   
   Import-Module ActiveDirectory
